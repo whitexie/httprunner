@@ -124,7 +124,7 @@ class RequestData(BaseModel):
     url: Url
     headers: Headers = {}
     cookies: Cookies = {}
-    body: Union[Text, bytes, Dict, List, None] = {}
+    body: Union[Text, bytes, List, Dict, None] = {}
 
 
 class ResponseData(BaseModel):
