@@ -209,7 +209,8 @@ class ResponseObject(object):
                 )
                 check_item = parse_string_value(check_item)
 
-            if check_item and isinstance(check_item, Text):
+            resp_obj_meta_keys = ['status_code', 'headers', 'cookies', 'body']
+            if check_item and isinstance(check_item, Text) and check_item.split('.')[0] in resp_obj_meta_keys:
                 check_value = self._search_jmespath(check_item)
             else:
                 # variable or function evaluation result is "" or not text
